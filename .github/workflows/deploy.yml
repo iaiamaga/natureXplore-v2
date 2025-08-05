@@ -22,7 +22,8 @@ jobs:
         run: npm ci
 
       - name: Build and Export 🔧
-        run: npm run export
+        run: npm run biuld
+      
 
       - name: Deploy to GitHub Pages 🚀
         uses: JamesIves/github-pages-deploy-action@v4
