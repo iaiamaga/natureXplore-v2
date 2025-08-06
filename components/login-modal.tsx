@@ -63,7 +63,7 @@ export default function LoginModal({ isOpen, onClose, onSubmit }: LoginModalProp
     }
 
     if (!formData.compartilharExperiencia) {
-      newErrors.compartilharExperiencia = "Esta pergunta é obrigatória"
+      newErrors.compartilharExperiencia = ""
     }
 
     setErrors(newErrors)
@@ -84,16 +84,16 @@ export default function LoginModal({ isOpen, onClose, onSubmit }: LoginModalProp
       await new Promise((resolve) => setTimeout(resolve, 2000))
 
       // Log dos dados (em produção, você pode integrar com um serviço de email)
-      console.log("Dados da jornada:", {
-        customerName: formData.nomeCompleto,
-        customerEmail: formData.email,
-        customerPhone: formData.telefone,
-        numberOfPeople: Number.parseInt(formData.quantidadePessoas),
-        numberOfDays: formData.quantidadeDias,
-        shareExperience: formData.compartilharExperiencia === "sim",
-        specialRequests: formData.detalhesEspeciais,
-        timestamp: new Date().toISOString(),
-      })
+      // console.log("Dados da jornada:", {
+      //   customerName: formData.nomeCompleto,
+      //   customerEmail: formData.email,
+      //   customerPhone: formData.telefone,
+      //   numberOfPeople: Number.parseInt(formData.quantidadePessoas),
+      //   numberOfDays: formData.quantidadeDias,
+      //   shareExperience: formData.compartilharExperiencia === "sim",
+      //   specialRequests: formData.detalhesEspeciais,
+      //   timestamp: new Date().toISOString(),
+      // })
 
       onSubmit(formData)
     } catch (error) {

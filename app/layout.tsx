@@ -2,6 +2,8 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Bree_Serif, Lato } from "next/font/google"
 import "./globals.css"
+import Header from "@/components/header"
+import Footer from "@/components/footer"
 
 const breeSerif = Bree_Serif({
   subsets: ["latin"],
@@ -20,7 +22,7 @@ const lato = Lato({
 export const metadata: Metadata = {
   title: "NatureXplore | Turismo Consciente no Sana",
   description: "Conecte-se à natureza e comunidade do Sana de forma ética e transformadora. Explorar é pertencer.",
-    generator: 'v0.dev'
+  generator: 'v0.dev'
 }
 
 export default function RootLayout({
@@ -30,7 +32,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR" className={`${breeSerif.variable} ${lato.variable}`}>
-      <body className="font-body bg-areia text-terra antialiased">{children}</body>
+      <body className="font-body bg-areia text-terra antialiased">
+        <Header />
+        <main className="min-h-screen">
+          {children}
+        </main>
+        <Footer />
+      </body>
     </html>
   )
 }

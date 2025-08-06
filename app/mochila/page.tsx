@@ -38,11 +38,11 @@ export default function MochilaPage() {
   }
 
   const handleLoginSubmit = (data: any) => {
-    console.log("Dados da jornada:", {
-      ...data,
-      experiencias: items,
-      dataEnvio: new Date().toISOString(),
-    })
+    // console.log("Dados da jornada:", {
+    //   ...data,
+    //   experiencias: items,
+    //   dataEnvio: new Date().toISOString(),
+    // })
 
     // Limpar mochila após envio
     clearMochila()

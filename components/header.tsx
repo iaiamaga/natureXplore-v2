@@ -47,7 +47,7 @@ export default function Header() {
   ]
 
   const handleLoginSubmit = (data: any) => {
-    console.log("Dados do login:", data)
+    // console.log("Dados do login:", data)
     setIsLoginModalOpen(false)
     // Aqui você pode processar os dados do formulário
   }

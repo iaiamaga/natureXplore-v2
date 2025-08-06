@@ -1,4 +1,4 @@
-import { experienceDetails } from "../data/ExperiencesData.js"
+import { experienceDetails } from "../data/ExperiencesData"
 import ExperiencePageClient from "./ExperiencePageClient"
 
 // Função necessária para exportação estática

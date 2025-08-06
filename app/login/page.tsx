@@ -53,7 +53,7 @@ export default function LoginPage() {
     }
 
     if (!formData.compartilharVivencias) {
-      newErrors.compartilharVivencias = "Esta pergunta é obrigatória"
+      newErrors.compartilharVivencias = ""
     }
 
     setErrors(newErrors)
@@ -73,11 +73,11 @@ export default function LoginPage() {
     await new Promise((resolve) => setTimeout(resolve, 2000))
 
     // Aqui você integraria com seu backend
-    console.log("Dados da jornada:", {
-      ...formData,
-      experiencias: items,
-      dataEnvio: new Date().toISOString(),
-    })
+    // console.log("Dados da jornada:", {
+    //   ...formData,
+    //   experiencias: items,
+    //   dataEnvio: new Date().toISOString(),
+    // })
 
     // Limpar mochila após envio
     clearMochila()

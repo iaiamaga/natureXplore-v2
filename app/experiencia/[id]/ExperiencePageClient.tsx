@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { experienceDetails} from "../data/ExperiencesData.js"
+import { experienceDetails} from "../data/ExperiencesData"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
 import { useMochilaStore } from "@/lib/store"
@@ -45,7 +45,7 @@ export default function ExperiencePageClient({ params }: ExperiencePageProps ) {
     )
   }
 
-  const isInMochila = items.some((item) => item.id === experienceDetails.id)
+  const isInMochila = items.some((item) => item.id === experience.id)
 
   const handleAddToMochila = () => {
     if (!isInMochila) {
@@ -71,20 +71,20 @@ export default function ExperiencePageClient({ params }: ExperiencePageProps ) {
               Voltar às experiências
             </Link>
 
-            <h1 className="font-title text-4xl md:text-5xl font-bold text-terra mb-4">{experienceDetails.name}</h1>
+            <h1 className="font-title text-4xl md:text-5xl font-bold text-terra mb-4">{experience.name}</h1>
 
             <div className="flex flex-wrap items-center gap-6 text-pedra mb-8">
               <div className="flex items-center">
                 <MapPin size={20} className="mr-2" />
-                <span>{experienceDetails.location}</span>
+                <span>{experience.location}</span>
               </div>
               <div className="flex items-center">
                 <Clock size={20} className="mr-2" />
-                <span>{experienceDetails.duration}</span>
+                <span>{experience.duration}</span>
               </div>
               <div className="flex items-center">
                 <User size={20} className="mr-2" />
-                <span>{experienceDetails.provider.name}</span>
+                <span>{experience.provider.name}</span>
               </div>
             </div>
           </div>
@@ -99,8 +99,8 @@ export default function ExperiencePageClient({ params }: ExperiencePageProps ) {
               <div className="lg:col-span-2">
                 <div className="relative h-96 lg:h-[500px] rounded-2xl overflow-hidden">
                   <Image
-                    src={experienceDetails.gallery[currentImageIndex] || "/placeholder.svg"}
-                    alt={experienceDetails.name}
+                    src={experience.gallery[currentImageIndex] || "/placeholder.svg"}
+                    alt={experience.name}
                     fill
                     className="object-cover"
                   />
@@ -108,7 +108,7 @@ export default function ExperiencePageClient({ params }: ExperiencePageProps ) {
               </div>
 
               <div className="space-y-4">
-                {experienceDetails.gallery.slice(1).map((image: string, index: number) => (
+                {experience.gallery.slice(1).map((image: string, index: number) => (
                   <button
                     key={index}
                     onClick={() => setCurrentImageIndex(index + 1)}
@@ -116,7 +116,7 @@ export default function ExperiencePageClient({ params }: ExperiencePageProps ) {
                   >
                     <Image
                       src={image || "/placeholder.svg"}
-                      alt={`${experienceDetails.name} - ${index + 2}`}
+                      alt={`${experience.name} - ${index + 2}`}
                       fill
                       className="object-cover"
                     />
@@ -136,7 +136,7 @@ export default function ExperiencePageClient({ params }: ExperiencePageProps ) {
             <div className="lg:col-span-2 space-y-8">
               <div>
                 <h2 className="font-title text-3xl font-bold text-terra mb-4">Sobre a Experiência</h2>
-                <p className="text-pedra leading-relaxed text-lg">{experienceDetails.fullDescription}</p>
+                <p className="text-pedra leading-relaxed text-lg">{experience.fullDescription}</p>
               </div>
 
               {/* Map Placeholder */}
@@ -146,7 +146,7 @@ export default function ExperiencePageClient({ params }: ExperiencePageProps ) {
                   <div className="text-center">
                     <MapPin size={48} className="text-folha mx-auto mb-2" />
                     <p className="text-pedra">Mapa interativo em desenvolvimento</p>
-                    <p className="text-sm text-pedra">{experienceDetails.location}</p>
+                    <p className="text-sm text-pedra">{experience.location}</p>
                   </div>
                 </div>
               </div>
@@ -157,7 +157,7 @@ export default function ExperiencePageClient({ params }: ExperiencePageProps ) {
               {/* Price Card */}
               <div className="bg-white rounded-2xl shadow-lg p-6">
                 <div className="text-center mb-6">
-                  <div className="text-4xl font-bold text-terra mb-2">R$ {experienceDetails.basePrice}</div>
+                  <div className="text-4xl font-bold text-terra mb-2">R$ {experience.basePrice}</div>
                   <div className="text-pedra">por pessoa</div>
                 </div>
 
@@ -187,10 +187,10 @@ export default function ExperiencePageClient({ params }: ExperiencePageProps ) {
                 <div className="space-y-3">
                   <div className="flex items-center">
                     <User size={20} className="text-folha mr-3" />
-                    <span className="text-pedra">{experienceDetails.provider.name}</span>
+                    <span className="text-pedra">{experience.provider.name}</span>
                   </div>
 
-                  {experienceDetails.provider.contact.whatsapp && (
+                  {experience.provider.contact.whatsapp && (
                     <a
                       href={`https://wa.me/5522981261825`}
                       target="_blank"
@@ -202,7 +202,7 @@ export default function ExperiencePageClient({ params }: ExperiencePageProps ) {
                     </a>
                   )}
 
-                  {experienceDetails.provider.contact.email && (
+                  {experience.provider.contact.email && (
                     <a
                       href={`mailto:naturexploradores@gmail.com`}
                       className="flex items-center text-folha hover:text-terra transition-colors duration-300"

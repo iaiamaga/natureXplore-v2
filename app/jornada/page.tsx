@@ -1,8 +1,6 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import Header from "@/components/header"
-import Footer from "@/components/footer"
 import Image from "next/image"
 import Link from "next/link"
 import { MapPin, Clock } from "lucide-react"
@@ -141,9 +139,7 @@ export default function JornadaPage() {
   }
 
   return (
-    <main className="min-h-screen bg-areia">
-      <Header />
-
+    <>
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
@@ -368,8 +364,6 @@ export default function JornadaPage() {
 
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#344E27] to-transparent" />
       </section>
-
-      <Footer />
-    </main>
+    </>
   )
 }
