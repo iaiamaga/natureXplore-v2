@@ -13,8 +13,8 @@ export default function HeroSection() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
-      <div className="absolute inset-0 z-0">
+      {/* Background Image Desktop*/}
+      <div className="absolute inset-0 z-0 hidden md:block">
         <div
           className="w-full h-full bg-cover bg-center bg-no-repeat"
           style={{
@@ -24,6 +24,17 @@ export default function HeroSection() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/60" 
         />
       </div>
+
+{/* Fundo para telas pequenas (mobile) */}
+<div className="absolute inset-0 z-0 block md:hidden">
+  <div
+    className="w-full h-full bg-cover bg-center bg-no-repeat"
+    style={{
+      backgroundImage: `url('/hero-background-mobile.jpeg')`,
+    }}
+  />
+  <div className="absolute inset-0 bg-black/40 bg-gradient-to-b from-black/30 via-black/20 to-black/60" />
+</div>
 
       {/* Content */}
       <div className="relative z-10 text-center section-padding max-w-6xl mx-auto animate-fade-in py-[40vh]">

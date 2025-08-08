@@ -70,14 +70,14 @@ export default function Footer() {
           <p className="text-areia/70 text-sm mb-4 md:mb-0">
             © {currentYear} NatureXplore. Todos os direitos reservados.
           </p>
-          <div className="flex space-x-6 text-sm">
+          {/* <div className="flex space-x-6 text-sm">
             <Link href="/privacidade" className="text-areia/70 hover:text-[#B6F442] transition-colors duration-300">
               Política de Privacidade
             </Link>
             <Link href="/termos" className="text-areia/70 hover:text-[#B6F442] transition-colors duration-300">
               Termos de Uso
             </Link>
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>

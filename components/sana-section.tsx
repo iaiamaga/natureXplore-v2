@@ -1,11 +1,10 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
-import { motion, useInView } from 'framer-motion';
-import { useMediaQuery } from 'react-responsive';
+import Image from "next/image"
 import Link from "next/link"
 
-export default function SanaSectionReveal() {
+export default function SanaSection() {
   const sectionRef = useRef(null)
   const [isVisible, setIsVisible] = useState(false)
 
@@ -34,44 +33,22 @@ export default function SanaSectionReveal() {
       ref={sectionRef}
       className="min-h-screen flex items-center justify-center section-padding bg-[#0F220B] relative py-[40vh] overflow-hidden"
     >
-      {/* Animated Reveal Overlay */}
-      <div className="absolute inset-0 z-10 pointer-events-none">
-        {/* Desktop - Horizontal Split */}
-        <div className="hidden md:flex h-full">
-          <div
-            className={`w-1/2 bg-[#0F220B] transition-transform duration-1000 ease-out ${
-              isVisible ? "-translate-x-full" : "translate-x-0"
-            }`}
-          />
-          <div
-            className={`w-1/2 bg-[#0F220B] transition-transform duration-1000 ease-out ${
-              isVisible ? "translate-x-full" : "translate-x-0"
-            }`}
-          />
-        </div>
-
-        {/* Mobile - Vertical Split */}
-        <div className="md:hidden flex flex-col h-full">
-          <div
-            className={`h-1/2 bg-[#0F220B] transition-transform duration-1000 ease-out ${
-              isVisible ? "-translate-y-full" : "translate-y-0"
-            }`}
-          />
-          <div
-            className={`h-1/2 bg-[#0F220B] transition-transform duration-1000 ease-out ${
-              isVisible ? "translate-y-full" : "translate-y-0"
-            }`}
-          />
-        </div>
-      </div>
 
       {/* Content */}
       <div className="container-max relative z-20">
         <div className="max-w-4xl mx-auto">
+
+          <div className="flex justify-center p-8">
+                        <div className="relative w-20 h-20">
+                          <Image src="/green-earth.png" alt="Icone de Local verde" fill className="object-contain" priority />
+                        </div>
+                      </div>
+        
+          <h2 className="text-center font-title text-3xl md:text-4xl font-bold text-areia 
+          mb-8">Descobrindo o Sana</h2>
           <div className="p-8 md:p-12 bg-white/20 backdrop-blur-md border border-areia/30 rounded-2xl">
             <div className="text-center">
-              <h2 className="font-title text-3xl md:text-4xl font-bold text-areia mb-8">Descobrindo o Sana</h2>
-
+              
               <p className="text-lg text-areia/90 leading-relaxed mb-8">
                 Descubra onde fica, como chegar, como é o local, e dicas do que fazer neste distrito único de Macaé, onde a Mata Atlântica preservada encontra
                 uma comunidade vibrante. O Sana é um refúgio natural que mantém viva sua biodiversidade, oferecendo aos visitantes uma experiência autêntica de conexão com a natureza e a cultura
@@ -79,13 +56,24 @@ export default function SanaSectionReveal() {
                 anrtesanais que fazem deste lugar um verdadeiro tesouro da região serrana fluminense.
               </p>
 
-              <Link 
-                href="/sana"
-                className="inline-block bg-areia text-[#0F220B] px-8 py-4 rounded-lg font-medium text-lg hover:bg-[#B6F442] hover:text-terra hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300 relative z-30"
-              >
-                Venha saber sobre o Sana!
-              </Link>
-           
+                          <div className="hidden md:block">
+                            <Link
+                              href="/sana"
+                              className="inline-block bg-areia text-[#0F220B] px-8 py-4 rounded-lg font-medium text-lg hover:bg-[#B6F442] hover:text-terra hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300 relative z-30"
+                            >
+                              Venha saber sobre o Sana!
+                            </Link>
+                            </div>
+              
+                          <div className="md:block md:hidden">
+                            <Link
+                              href="/sana"
+                              className="inline-block bg-[#B6F442] text-terra px-8 py-4 rounded-lg font-medium text-lg hover:bg-areia hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300"
+                            >
+                              Venha saber sobre o Sana!
+                            </Link>
+                          </div>                  
+            
             </div>
           </div>
         </div>

@@ -1,7 +1,7 @@
 import type React from "react"
 import type { Metadata } from "next"
 import { Bree_Serif, Lato } from "next/font/google"
-import "./globals.css"
+import "./globals.css"  // ← Usando o novo globals.css
 import Header from "@/components/header"
 import Footer from "@/components/footer"
 

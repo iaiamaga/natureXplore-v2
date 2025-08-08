@@ -5,7 +5,6 @@ import Link from "next/link"
 import Image from "next/image"
 import { Menu, X, User } from "lucide-react"
 import { useMochilaStore } from "@/lib/store"
-import LoginModal from "./login-modal"
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -46,11 +45,7 @@ export default function Header() {
     { href: "/diario", label: "Diário dos Exploradores" },
   ]
 
-  const handleLoginSubmit = (data: any) => {
-    // console.log("Dados do login:", data)
-    setIsLoginModalOpen(false)
-    // Aqui você pode processar os dados do formulário
-  }
+
 
   return (
     <>
@@ -120,16 +115,6 @@ export default function Header() {
                   )}
                 </Link>
 
-                {/* Login Button */}
-                <button
-                  onClick={() => setIsLoginModalOpen(true)}
-                  className={`p-2 hover:text-[#B6F442] transition-colors duration-300 ${
-                    isScrolled ? "text-headerGreen" : "text-white"
-                  }`}
-                >
-                  <User size={24} />
-                </button>
-
                 {/* Hamburger Menu Button */}
                 <button
                   className={`p-2 hover:text-[#B6F442] transition-colors duration-300 ${
@@ -168,9 +153,6 @@ export default function Header() {
           </div>
         </div>
       </header>
-
-      {/* Login Modal */}
-      <LoginModal isOpen={isLoginModalOpen} onClose={() => setIsLoginModalOpen(false)} onSubmit={handleLoginSubmit} />
     </>
   )
 }

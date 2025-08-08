@@ -6,10 +6,7 @@ export default function NaturexplorePresentation() {
   return (
     <section className="min-h-screen flex items-center justify-center section-padding relative py-[40vh] overflow-hidden">
 
-      {/* Fundo sólido da seção */}
       <div className="absolute inset-0 z-0 bg-[#2E450F]" />
-
-      {/* Textura por cima do fundo, mas NÃO cobre o gradiente de transição */}
 
     
 
@@ -45,6 +42,10 @@ export default function NaturexplorePresentation() {
             <p>Acreditamos que explorar é pertencer, e que o verdadeiro luxo está em sentir o vento no rosto, o cheiro da Mata Atlântica e o silêncio que cura.</p>
             <p><strong>Viva o agora. Viva o natural. Viva o NatureXplore.</strong></p>
             <p>Trabalhamos diretamente com moradores, produtores, artesãos e guias locais...</p>
+          </div>
+
+          <div className="p-4 space-y-8 text-lg text-areia/90 leading-relaxed mb-12">
+            <p>Entre em contato conosco: </p>
           </div>
 
           <div className="flex justify-center space-x-6">
