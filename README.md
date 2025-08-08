@@ -4,9 +4,9 @@
 
 ## 🌿 Sobre o Projeto
 
-O NatureXplore é uma plataforma de turismo consciente que conecta viajantes às experiências autênticas do Sana, distrito de Macaé/RJ. Nossa missão é promover o turismo sustentável, valorizando a comunidade local e preservando a natureza.
+Este projeto é feito como uma forma de apoio e e recohecimento do impacto positivo do NatureXplore que é uma agência de turismo consciente que conecta viajantes às experiências autênticas do Sana, distrito de Macaé/RJ. Sua missão é promover o turismo sustentável, valorizando a comunidade local e preservando a natureza. NatureXplore é mais que uma agencia de turismo, é um movimento jovem, empoderador e ativo, fortaleçendo de forma regenerativa o turismo local.   
 
-## ✨ Funcionalidades
+## ✨ Funcionalidades da Plataforma
 
 - 🎒 **Mochila Personalizada**: Monte sua jornada selecionando experiências únicas
 - 🏔️ **Experiências Autênticas**: Trilhas, hospedagens, cultura e gastronomia local
@@ -21,6 +21,7 @@ O NatureXplore é uma plataforma de turismo consciente que conecta viajantes às
 - **Deploy**: Vercel
 - **Geração de PDF**: react-pdf
 - **Envio de Email**: Supabase Functions
+
 
 ## 🛠️ Instalação e Desenvolvimento
 
@@ -93,7 +94,7 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
 ## 📞 Contato
 
 - **Website**: [naturexplore.vercel.app](https://naturexplore.vercel.app)
-- **Email**: contato@naturexplore.com
+- **Email**: iaiakedemy@gmail.com
 - **Instagram**: [@naturexplore_sana](https://instagram.com/naturexplore_sana)
 
 ---
